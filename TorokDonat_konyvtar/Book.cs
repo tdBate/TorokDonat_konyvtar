@@ -26,11 +26,11 @@ namespace TorokDonat_konyvtar
 		public int PageCount { get => pageCount; }
 		public int ReleaseYear { get => releaseYear; }
 
-		public Book GetBookByTitle(Book[] books)
+		public Book GetBookByTitle(Book[] books, string title)
 		{
 			foreach (Book book in books)
 			{
-				if (book.Title == this.title)
+				if (book.Title == title)
 				{
 					return book;
 				}
@@ -40,17 +40,33 @@ namespace TorokDonat_konyvtar
 
 		public void EditBookData()
 		{
-            Console.Write("Cím: ");
-			this.title = Console.ReadLine();
+			Console.Write("Cím: ");
+			string inputTitle = Console.ReadLine();
+			if (!string.IsNullOrEmpty(inputTitle))
+			{
+				this.title = inputTitle;
+			}
 
 			Console.Write("Szerző: ");
-			this.author = Console.ReadLine();
+			string inputAuthor = Console.ReadLine();
+			if (!string.IsNullOrEmpty(inputAuthor))
+			{
+				this.author = inputAuthor;
+			}
 
 			Console.Write("Hossz lapokban: ");
-			this.pageCount = int.Parse(Console.ReadLine());
+			string inputPageCount = Console.ReadLine();
+			if (!string.IsNullOrEmpty(inputPageCount))
+			{
+				this.pageCount = int.Parse(inputPageCount);
+			}
 
 			Console.Write("Kiadási év: ");
-			this.releaseYear = int.Parse(Console.ReadLine());
+			string inputReleaseYear = Console.ReadLine();
+			if (!string.IsNullOrEmpty(inputReleaseYear))
+			{
+				this.releaseYear = int.Parse(inputReleaseYear);
+			}
 		}
 
 
