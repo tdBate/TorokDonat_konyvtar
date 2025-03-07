@@ -13,12 +13,12 @@ namespace TorokDonat_konyvtar
 		private int pageCount;
 		private int releaseYear;
 
-		public Book(string title)
+		public Book(string title, string author, int pageCount, int releaseYear)
 		{
 			this.title = title;
-			this.author = "Gipsz Jakab";
-			this.pageCount = 100;
-			this.releaseYear = 1970;
+			this.author = author;
+			this.pageCount = pageCount;
+			this.releaseYear = releaseYear;
 		}
 
 		public string Title { get => title; }
